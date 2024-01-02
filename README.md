@@ -1,5 +1,5 @@
 #  YoloV5_D415_ROS
-The code uses the official realsense documentation and yolov5_ros from mats-robotics (https://github.com/mats-robotics/yolov5_ros)
+The code from YoloV5_D415 (https://github.com/Jumbo-zczlbj0/YoloV5_D415) has been modified. Speech recognition and multithreading features were removed, and an output for object category and depth in the ROS topic was added
 
 ## Install
 ### 1.Install cuda && pytorch
@@ -13,32 +13,18 @@ The code uses the official realsense documentation and yolov5_ros from mats-robo
 
 > cd ~/catkin_ws/src/
 
-#### realsense:
-> git clone https://github.com/IntelRealSense/realsense-ros.git
+> git clone [https://github.com/ultralytics/yolov5.git](https://github.com/Jumbo-zczlbj0/YoloV5_D415_Ros_Topic.git)
 
-> git clone https://github.com/pal-robotics/ddynamic_reconfigure.git
+> cd ./YoloV5_D415_Ros_Topic/scripts
 
-> cd realsense-ros/
-
-> git checkout `git tag | sort -V | grep -P "^2.\d+\.\d+" | tail -1`
-
-> cd ..
-
-#### yolov5_ros:
-> git clone https://github.com/mats-robotics/detection_msgs.git
-
-> git clone https://github.com/Jumbo-zczlbj0/YoloV5_D415_ROS.git
-
-> cd ./YoloV5_D415_ROS/src
-
-> chmod +x detect.py
+> chmod +x pyrealsense2_camera.py
 
 #### yolov5:
 > git clone https://github.com/ultralytics/yolov5.git
 
 > pip3 install requirements.txt
 
-### 3.Install Intel RealSense SDK 2.0
+### 3.Install Intel RealSense SDK 2.0 
 
 > Choose the version that suits you based on your computer system and install SDK-2：https://www.intelrealsense.com/sdk-2/
 
@@ -60,7 +46,5 @@ cd ~/catkin_ws
 
 > source ~/catkin_ws/devel/setup.bash
 
-> roslaunch realsense2_camera rs_camera.launch
-
-Open another terminal
 > roslaunch yolo_topic yolo_topic.launch
+
