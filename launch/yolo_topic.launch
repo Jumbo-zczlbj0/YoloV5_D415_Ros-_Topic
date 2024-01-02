@@ -1,0 +1,4 @@
+<launch>
+    <node name="yolo_topic" pkg="yolo_topic" type="pyrealsense2_camera.py" output="screen">
+    </node>
+</launch>
